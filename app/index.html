@@ -5,6 +5,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
     <link rel="stylesheet" href="dist/assets/css/app.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 </head>
 <body ng-app="BlogApp" ng-cloak>
     <div ng-controller="HeaderController"></div>
@@ -12,59 +13,68 @@
     <div ng-controller="FooterController"></div>
 
     <div id="area_0" layout="column">
-        <div id="area_1" flex="none" layout="row" hide show-gt-md style="height:100px; background: #797979">
-            <div id="area_1_1" flex="5" hide show-gt-md></div>
-            <div id="area_1_2" flex="20" hide show-gt-sm>Logo</div>
-            <div id="area_1_3" flex style="background: #fdd246"></div>
-            <div id="area_1_4" flex="25" hide show-gt-sm>Social media icons</div>
-            <div id="area_1_5" flex="5" hide show-gt-md></div>
-        </div>
-        <div id="area_2-3-4" flex="nogrow" layout="row" style="height:1000px; background: #d3d3d3">
-            <div id="area_2" flex="25" layout="row" hide show-gt-sm>
-                <div id="area_2_1" flex="25" hide show-gt-md></div>
-                <div id="area_2_2" flex="100" flex-gt-md="75"  layout="column" style="background: darkkhaki">
-                    <div id="area_2_2_1" flex="none" hide show-gt-sm style="height: 150px; background: #323232">Menu</div>
-                    <div id="area_2_2_2" flex></div>
-                </div>
-            </div>
-
-            <div id="area_4" flex layout="column" style="height:1000px; background: cadetblue">
-                <div id="area_2_2_1_hidden" flex="none" hide-gt-sm show-lt-md style="height: 50px; background: #323232"></div>
-                <div id="area_4_1" flex="none" layout="row" layout-align="center center" style="height: 150px;">Hangi sayfadayız</div>
-                <div id="area_4_2" flex layout="column" >
-                    <md-toolbar class="md-warn">
-                        <div class="md-toolbar-tools" layout="row" layout-align="center center">
-                            <h2 class="md-flex">Toolbar: md-warn</h2>
-                        </div>
-                    </md-toolbar>
-                    <div flex layout="column" layout-padding>
-                        <md-content flex>
-                            <p>Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.</p>
-                            <p>Facete delenit argumentum cum at. Pro rebum nostrum contentiones ad. Mel exerci tritani maiorum at, mea te audire phaedrum, mel et nibh aliquam. Malis causae equidem vel eu. Noster melius vis ea, duis alterum oporteat ea sea. Per cu vide munere fierent.</p>
-                            <p>Ad sea dolor accusata consequuntur. Sit facete convenire reprehendunt et. Usu cu nonumy dissentiet, mei choro omnes fuisset ad. Te qui docendi accusam efficiantur, doming noster prodesset eam ei. In vel posse movet, ut convenire referrentur eum, ceteros singulis intellegam eu sit.</p>
-                            <p>Sit saepe quaestio reprimique id, duo no congue nominati, cum id nobis facilisi. No est laoreet dissentias, idque consectetuer eam id. Clita possim assueverit cu his, solum virtute recteque et cum. Vel cu luptatum signiferumque, mel eu brute nostro senserit. Blandit euripidis consequat ex mei, atqui torquatos id cum, meliore luptatum ut usu. Cu zril perpetua gubergren pri. Accusamus rationibus instructior ei pro, eu nullam principes qui, reque justo omnes et quo.</p>
-                            <p>Sint unum eam id. At sit fastidii theophrastus, mutat senserit repudiare et has. Atqui appareat repudiare ad nam, et ius alii incorrupte. Alii nullam libris his ei, meis aeterno at eum. Ne aeque tincidunt duo. In audire malorum mel, tamquam efficiantur has te.</p>
-                            <p>Qui utamur tacimates quaestio ad, quod graece omnium ius ut. Pri ut vero debitis interpretaris, qui cu mentitum adipiscing disputationi. Voluptatum mediocritatem quo ut. Fabulas dolorem ei has, quem molestie persequeris et sit.</p>
-                            <p>Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.</p>
-                            <p>Facete delenit argumentum cum at. Pro rebum nostrum contentiones ad. Mel exerci tritani maiorum at, mea te audire phaedrum, mel et nibh aliquam. Malis causae equidem vel eu. Noster melius vis ea, duis alterum oporteat ea sea. Per cu vide munere fierent.</p>
-                            <p>Ad sea dolor accusata consequuntur. Sit facete convenire reprehendunt et. Usu cu nonumy dissentiet, mei choro omnes fuisset ad. Te qui docendi accusam efficiantur, doming noster prodesset eam ei. In vel posse movet, ut convenire referrentur eum, ceteros singulis intellegam eu sit.</p>
-                            <p>Sit saepe quaestio reprimique id, duo no congue nominati, cum id nobis facilisi. No est laoreet dissentias, idque consectetuer eam id. Clita possim assueverit cu his, solum virtute recteque et cum. Vel cu luptatum signiferumque, mel eu brute nostro senserit. Blandit euripidis consequat ex mei, atqui torquatos id cum, meliore luptatum ut usu. Cu zril perpetua gubergren pri. Accusamus rationibus instructior ei pro, eu nullam principes qui, reque justo omnes et quo.</p>
-                            <p>Sint unum eam id. At sit fastidii theophrastus, mutat senserit repudiare et has. Atqui appareat repudiare ad nam, et ius alii incorrupte. Alii nullam libris his ei, meis aeterno at eum. Ne aeque tincidunt duo. In audire malorum mel, tamquam efficiantur has te.</p>
-                            <p>Qui utamur tacimates quaestio ad, quod graece omnium ius ut. Pri ut vero debitis interpretaris, qui cu mentitum adipiscing disputationi. Voluptatum mediocritatem quo ut. Fabulas dolorem ei has, quem molestie persequeris et sit.</p>
-                        </md-content>
+        <div id="area_1" flex="none" layout="row" hide show-gt-md style="height:150px;">
+            <div id="area_1_1" flex="25" layout="row">
+                <div id="area_1_1_1" flex="25" hide show-gt-md></div>
+                <div id="area_1_1_2" flex="75" hide show-gt-sm>
+                    <div flex class="padded" md-whiteframe="3">
+                        <img src="src/assets/img/security.png" alt="security_alt">
                     </div>
                 </div>
             </div>
+            <div id="area_1_2" flex md-whiteframe="3" style="height: 100%; width: 100%;">
+                <img flex src="src/assets/img/banner.png" alt="banner" layout-fill>
+            </div>
+            <div id="area_1_3" flex="30" layout="row">
+                <div id="area_1_3_1" flex="75" layout="column" hide show-gt-sm>
+                    <div flex="none" style="width: 7px;"></div>
+                    <div flex layout="column" layout-align="center" class="padded" md-whiteframe="1">
+                        <div flex="20" layout="row" layout-align="center" style="color: white; padding: 2px; text-shadow: 2px 2px #686868;"><h3>Bizi Takip Edin</h3></div>
+                        <div flex="60" layout="column" layout-align="center">
+                            <div flex="65" layout="column">
+                                <div flex layout="row" layout-align="center center" style="height: 100%;">
+                                    <a target="_blank" style="height: 32px; width: 32px; padding: 3px;"><img class="md-whiteframe-2dp" src="src/assets/img/facebook.png" alt="facebook" style="height: 100%;"></a>
+                                    <a target="_blank" style="height: 32px; width: 32px; padding: 3px;"><img class="md-whiteframe-2dp" src="src/assets/img/facebook.png" alt="facebook" style="height: 100%;"></a>
+                                    <a target="_blank" style="height: 32px; width: 32px; padding: 3px;"><img class="md-whiteframe-2dp" src="src/assets/img/facebook.png" alt="facebook" style="height: 100%;"></a>
+                                    <a target="_blank" style="height: 32px; width: 32px; padding: 3px;"><img class="md-whiteframe-2dp" src="src/assets/img/facebook.png" alt="facebook" style="height: 100%;"></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div flex="20"></div>
+                    </div>
+                </div>
+                <div id="area_1_3_2" flex="25" hide show-gt-md></div>
+            </div>
+
+        </div>
+        <div flex="none" style="height: 30px;"></div>
+        <div id="area_2-3-4" flex="nogrow" layout="row" style="height:1000px; background: #d3d3d3">
+            <div id="area_2" flex="25" layout="row" hide show-gt-sm>
+                <div id="area_2_1" flex="25" hide show-gt-md></div>
+                <div id="area_2_2" flex="100" flex-gt-md="75"  layout="column" style="background: #e7e7e7">
+                    <div id="area_2_2_1" ng-include="'src/partials/navbar.html'" flex="none" layout="column" hide show-gt-sm style="height: 150px; background: #acacac"></div>
+                    <div flex="none" style="height: 10px;"></div>
+                    <div id="area_2_2_2" flex layout="column" ng-include="'src/partials/popular_post.html'"></div>
+                </div>
+            </div>
+
+            <div id="area_4" flex layout="column" style="height:1000px;" layout-padding>
+                <div id="area_2_2_1_hidden" flex="none" hide-gt-sm show-lt-md style="height: 50px; background: #323232"></div>
+                <div id="area_4_1" flex="none" layout="row" layout-align="center center" style="height: 100px; background: url(src/assets/img/bg_pattern.png) #8290ff repeat-x; background-blend-mode: multiply">
+                    <h3>Makaleler</h3>
+                </div>
+                <div id="area_4_2" flex layout="column" ng-include="'src/partials/page_container.html'"></div>
+            </div>
 
             <div id="area_3" flex="30" layout="row" flex="none" hide show-gt-sm>
-                <div id="area_3_2" flex="100" flex-gt-md="75" style="background: darkkhaki">Plugins
-                    <div id="area_3_2_1" flex="none" style="height: 100px;"></div>
+                <div id="area_3_2" flex="100" flex-gt-md="75" style="background: darkkhaki" layout-padding>
+                    <div id="area_3_2_1" flex="none" layout="row" layout-align="center center" style="height: 150px; background-color: #9E9E9E">Your Stats</div>
                     <div id="area_3_2_2"></div>
                 </div>
                 <div id="area_3_1" flex="25" hide show-gt-md></div>
             </div>
         </div>
-        <div id="area_5" flex="none" style="height:150px; background: orange"></div>
+        <div id="area_5" flex="grow" layout="column" ng-include="'src/partials/footer.html'" style="background: #919191"></div>
     </div>
 
     <script src="bower_components/angular/angular.min.js"></script>
