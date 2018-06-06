@@ -13,41 +13,27 @@
     <div ng-controller="FooterController"></div>
 
     <div id="area_0" layout="column">
+        <!--En üst kısım-->
         <div id="area_1" flex="none" layout="row" hide show-gt-md style="height:150px;">
             <div id="area_1_1" flex="25" layout="row">
                 <div id="area_1_1_1" flex="25" hide show-gt-md></div>
-                <div id="area_1_1_2" flex="75" hide show-gt-sm>
-                    <div flex class="padded" md-whiteframe="3">
-                        <img src="src/assets/img/security.png" alt="security_alt">
-                    </div>
+                <div id="area_1_1_2_leftside" flex="75" layout="row" layout-align="center center" hide show-gt-sm class="md-whiteframe-1dp" style="padding: 0 8px 0 8px; background-color: #f1c40f;">
+                    <img src="src/assets/img/security_logo.png" alt="security_alt">
                 </div>
             </div>
-            <div id="area_1_2" flex md-whiteframe="3" style="height: 100%; width: 100%;">
-                <img flex src="src/assets/img/banner.png" alt="banner" layout-fill>
+            <div id="area_1_2_banner" flex style="height: 100%; width: 100%; padding: 0 8px 0 8px;">
+                <img flex src="src/assets/img/cyber_banner.png" alt="banner" style="opacity: 0.9" class="md-whiteframe-1dp" layout-fill>
             </div>
-            <div id="area_1_3" flex="30" layout="row">
-                <div id="area_1_3_1" flex="75" layout="column" hide show-gt-sm>
-                    <div flex="none" style="width: 7px;"></div>
-                    <div flex layout="column" layout-align="center" class="padded" md-whiteframe="1">
-                        <div flex="20" layout="row" layout-align="center" style="color: white; padding: 2px; text-shadow: 2px 2px #686868;"><h3>Bizi Takip Edin</h3></div>
-                        <div flex="60" layout="column" layout-align="center">
-                            <div flex="65" layout="column">
-                                <div flex layout="row" layout-align="center center" style="height: 100%;">
-                                    <a target="_blank" style="height: 32px; width: 32px; padding: 3px;"><img class="md-whiteframe-2dp" src="src/assets/img/facebook.png" alt="facebook" style="height: 100%;"></a>
-                                    <a target="_blank" style="height: 32px; width: 32px; padding: 3px;"><img class="md-whiteframe-2dp" src="src/assets/img/facebook.png" alt="facebook" style="height: 100%;"></a>
-                                    <a target="_blank" style="height: 32px; width: 32px; padding: 3px;"><img class="md-whiteframe-2dp" src="src/assets/img/facebook.png" alt="facebook" style="height: 100%;"></a>
-                                    <a target="_blank" style="height: 32px; width: 32px; padding: 3px;"><img class="md-whiteframe-2dp" src="src/assets/img/facebook.png" alt="facebook" style="height: 100%;"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div flex="20"></div>
-                    </div>
-                </div>
+            <div id="area_1_3" flex="25" layout="row">
+                <div id="area_1_3_1_followus" flex="75" layout="column" hide show-gt-sm ng-include="'src/partials/follow_us.html'"></div>
                 <div id="area_1_3_2" flex="25" hide show-gt-md></div>
             </div>
-
         </div>
-        <div flex="none" style="height: 30px;"></div>
+
+        <!--Tepe ile gövde arasındaki boşluk-->
+        <div flex="none" hide show-gt-md style="height: 30px;"></div>
+
+        <!--Gövde-->
         <div id="area_2-3-4" flex="nogrow" layout="row" style="height:1000px; background: #d3d3d3">
             <div id="area_2" flex="25" layout="row" hide show-gt-sm>
                 <div id="area_2_1" flex="25" hide show-gt-md></div>
@@ -58,15 +44,21 @@
                 </div>
             </div>
 
-            <div id="area_4" flex layout="column" style="height:1000px;" layout-padding>
-                <div id="area_2_2_1_hidden" flex="none" hide-gt-sm show-lt-md style="height: 50px; background: #323232"></div>
+            <div id="area_4" flex layout="column" style="height:1000px; padding: 0 8px 0 8px">
+                <div id="area_2_2_1_hidden" flex="none" layout="row" hide-gt-sm show-lt-md style="height: 50px; background: #666666">
+                    <div flex="none" layout="row" layout-align="center center" style="width: 50px">
+                        <img src="src/assets/img/menu_dropdown.png" alt="">
+                    </div>
+                    <div flex></div>
+                </div>
+
                 <div id="area_4_1" flex="none" layout="row" layout-align="center center" style="height: 100px; background: url(src/assets/img/bg_pattern.png) #8290ff repeat-x; background-blend-mode: multiply">
                     <h3>Makaleler</h3>
                 </div>
                 <div id="area_4_2" flex layout="column" ng-include="'src/partials/page_container.html'"></div>
             </div>
 
-            <div id="area_3" flex="30" layout="row" flex="none" hide show-gt-sm>
+            <div id="area_3" flex="25" layout="row" flex="none" hide show-gt-sm>
                 <div id="area_3_2" flex="100" flex-gt-md="75" style="background: darkkhaki" layout-padding>
                     <div id="area_3_2_1" flex="none" layout="row" layout-align="center center" style="height: 150px; background-color: #9E9E9E">Your Stats</div>
                     <div id="area_3_2_2"></div>
@@ -76,7 +68,11 @@
         </div>
         <div id="area_5" flex="grow" layout="column" ng-include="'src/partials/footer.html'" style="background: #919191"></div>
     </div>
-
+    <style>
+        body {
+            font-family: "Roboto";
+        }
+    </style>
     <script src="bower_components/angular/angular.min.js"></script>
     <script src="bower_components/angular-aria/angular-aria.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
