@@ -1,6 +1,6 @@
 app.directive("lastContent", function () {
     return {
         restrict: 'E',
-        templateUrl: 'dist/partials/lastcontent.directive.html'
+        templateUrl: 'dist/partials/directive/lastcontent.directive.html'
     };
 });

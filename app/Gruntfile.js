@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 dest: 'temp/<%= pkg.name %>.routers.js'
             },
             directives:{
-                src: 'src/directives/*.js',
+                src: 'src/directives/**/*.js',
                 dest: 'temp/<%= pkg.name %>.directives.js'
             },
             dist: {
@@ -50,7 +50,7 @@ module.exports = function(grunt) {
                 files: [{
                     expand: true,
                     cwd: 'src',
-                    src: ['partials/*.html', '*.html'],
+                    src: ['partials/**/*.html', '*.html'],
                     dest: 'dist'
                 }]
             }
