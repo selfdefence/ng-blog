@@ -53,9 +53,17 @@
                 </div>
 
                 <div id="area_4_1" flex="none" layout="row" layout-align="center center" style="height: 100px; background: url(src/assets/img/bg_pattern.png) #8290ff repeat-x; background-blend-mode: multiply">
-                    <h3>Makaleler</h3>
+                    <h3>{{title}}</h3>
                 </div>
-                <div id="area_4_2" flex layout="column" ng-include="'dist/partials/main_container.html'"></div>
+
+                <!--UI-VIEW-->
+                <!--UI-VIEW-->
+                <!--UI-VIEW-->
+                <div id="area_4_2" flex layout="column" ui-view></div>
+                <!--UI-VIEW-->
+                <!--UI-VIEW-->
+                <!--UI-VIEW-->
+
             </div>
 
             <div id="area_3" flex="25" layout="row" flex="none" hide show-gt-sm>
@@ -74,6 +82,8 @@
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/angular-messages/angular-messages.min.js"></script>
     <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+
     <script src="dist/app.js" charset="utf-8"></script>
 
 </body>
