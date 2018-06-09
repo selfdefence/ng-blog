@@ -4,10 +4,11 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             main_route:{
                 name: 'home',
                 url: '/home',
-                templateUrl: 'dist/partials/main_container.html',
+                templateUrl: 'dist/partials/route/main_container.html',
                 controller: ['$scope', '$rootScope', 'LastContent', function ($scope, $rootScope, LastContent) {
                     $rootScope.setContentTitle("Anasayfa");
                     LastContent.getContent();
+                    $scope.pages = [{type: 'makale', id:'123123'}, {type: 'haber', id:'5432423'}];
                 }]
             },
             children:[]
@@ -16,19 +17,33 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             main_route:{
                 name: 'articles',
                 url: '/articles',
-                templateUrl: 'dist/partials/articles.html',
+                templateUrl: 'dist/partials/route/articles.html',
                 controller: ['$scope', '$rootScope', 'Article', function ($scope, $rootScope, Article) {
                     $rootScope.setContentTitle("Makaleler");
                     Article.getArticles();
                 }]
             },
-            children:[]
+            children: {
+                page: {
+                    name: 'articles.page',
+                    url: '/:id',
+                    params: {
+                        id: null
+                    },
+                    views: { // Targets unnamed view of root template (index.html)
+                        "@": {
+                            templateUrl: 'dist/partials/route/page_container.html',
+                            controller: 'PageController'
+                        }
+                    }
+                }
+            }
         },
         documents:{
             main_route:{
                 name: 'documents',
                 url: '/documents',
-                templateUrl: 'dist/partials/documents.html',
+                templateUrl: 'dist/partials/route/documents.html',
                 controller: ['$scope', '$rootScope', 'Document', function ($scope, $rootScope, Document) {
                     $rootScope.setContentTitle("Dokümanlar");
                     Document.getDocuments();
@@ -40,7 +55,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             main_route:{
                 name: 'about',
                 url: '/about',
-                templateUrl: 'dist/partials/about.html',
+                templateUrl: 'dist/partials/route/about.html',
                 controller: ['$scope', '$rootScope', function ($scope, $rootScope) {
                     $rootScope.setContentTitle("Hakkımda");
                 }]
@@ -53,7 +68,10 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $urlRouterProvider.otherwise(routes.home.main_route.url);
 
     $stateProvider.state(routes.home.main_route);
+
     $stateProvider.state(routes.articles.main_route);
+    $stateProvider.state(routes.articles.children.page);
+
     $stateProvider.state(routes.documents.main_route);
     $stateProvider.state(routes.about.main_route);
 }]);
