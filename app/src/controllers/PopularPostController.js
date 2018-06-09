@@ -1,5 +1,5 @@
 app.controller('PopularPostController', ['$scope', 'PopularPost' ,function ($scope, PopularPost) {
     PopularPost.getContent();
 
-    $scope.posts = ['1', '2', '3', '4', '5'];
+    $scope.posts = [{id:'1'}, {id:'2'}, {id:'3'}];
 }]);

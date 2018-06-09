@@ -1,11 +1,11 @@
-<a flex layout="column" ui-sref="articles.page({id:post})">
+<a flex layout="column" ui-sref="articles.page({id:{{page_info.id}}})">
     <div flex="none" layout="column" layout-align="center" style="height: 100px; background: #9E9E9E;">
         <div flex="none" layout="row" style="height: 75px; background: #6775ae">
             <div flex="none" layout="row" style="width: 75px; background-color: #ffd347; padding: 5px;">
                 <div flex style="background: #ae675d"></div>
             </div>
             <div flex layout="column" style="padding: 3px">
-                <div flex style="overflow: hidden; line-height: 1"><span class="md-caption" style="font-weight: bold;">{{post}} Lorem ipsum dolor sit amet, ne quod novum mei.Lorem ipsum dolor sit amet, ne quod novum mei</span></div>
+                <div flex style="overflow: hidden; line-height: 1"><span class="md-caption" style="font-weight: bold;">{{page_info.id}} Lorem ipsum dolor sit amet, ne quod novum mei.Lorem ipsum dolor sit amet, ne quod novum mei</span></div>
             </div>
         </div>
     </div>
