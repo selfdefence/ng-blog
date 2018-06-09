@@ -13,22 +13,34 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
         },
         articles:{
             main_route:{
-                name: 'article',
-                url: '/article'
+                name: 'articles',
+                url: '/articles',
+                templateUrl: 'dist/partials/articles.html',
+                controller: ['$scope', function ($scope) {
+
+                }]
             },
             children:[]
         },
         documents:{
             main_route:{
-                name: 'document',
-                url: '/document'
+                name: 'documents',
+                url: '/documents',
+                templateUrl: 'dist/partials/documents.html',
+                controller: ['$scope', function ($scope) {
+
+                }]
             },
             children:[]
         },
         about:{
             main_route:{
                 name: 'about',
-                url: '/about'
+                url: '/about',
+                templateUrl: 'dist/partials/about.html',
+                controller: ['$scope', function ($scope) {
+
+                }]
             },
             children:[]
         }
