@@ -22,8 +22,12 @@ module.exports = function(grunt) {
                 src: 'src/routes/**/*.js',
                 dest: 'temp/<%= pkg.name %>.routers.js'
             },
+            directives:{
+                src: 'src/directives/*.js',
+                dest: 'temp/<%= pkg.name %>.directives.js'
+            },
             dist: {
-                src: ['src/app.js','temp/<%= pkg.name %>.modules.js', 'temp/<%= pkg.name %>.controllers.js', 'temp/<%= pkg.name %>.services.js', 'temp/<%= pkg.name %>.routers.js'],
+                src: ['src/app.js','temp/<%= pkg.name %>.modules.js', 'temp/<%= pkg.name %>.controllers.js', 'temp/<%= pkg.name %>.services.js', 'temp/<%= pkg.name %>.routers.js', 'temp/<%= pkg.name %>.directives.js'],
                 dest: 'temp/<%= pkg.name %>.js'
             }
         },

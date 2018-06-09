@@ -2,21 +2,8 @@
     <md-content flex>
         <!--Burası bir tag olacak-->
         <div style="height: 10px;"></div>
-        <div flex="auto" layout="row" style="border: 1px solid #666666; padding: 10px">
-            <div flex="none" hide show-gt-md layout="row" layout-align="center center" style="width:200px; background-color: #8290ff">Resim</div>
-            <div flex="auto" layout="column" style="background-color: #ffd347">
-                <div flex="none" layout="row" style="height: 25px;">
-                    <div flex="none" layout="row" layout-align="center center" style="width:100px; border: 1px solid #666666; background-color: #f1c40f; color: white"><span class="md-caption"><b>Makale</b></span></div>
-                </div>
-                <div flex="none" layout="row" layout-align="none start" style="height: 50px; padding: 5px; border: 1px solid #666666;"><b>Başlık Başlık Başlık Başlık</b></div>
-                <div flex="none" layout="row" layout-align="none start" style="height: 50px; padding: 5px; border: 1px solid #666666;"><span class="md-caption">İçerik İçerik İçerik İçerik </span></div>
-                <div flex="grow" layout="column" layout-gt-sm="row" style="padding: 5px; border: 1px solid #666666;">
-                    <div flex="none" flex-gt-sm style="height: 15px; border: 1px solid #666666;"><span class="md-caption"></span></div>
-                    <div flex="none" flex-gt-sm style="height: 15px; border: 1px solid #666666;"><span class="md-caption"></span></div>
-                    <div flex="none" flex-gt-sm style="height: 15px; border: 1px solid #666666;"><span class="md-caption"></span></div>
-                    <div flex="none" flex-gt-sm style="height: 15px; border: 1px solid #666666;"></div>
-                </div>
-            </div>
+        <div flex="auto" ng-repeat="item in ['1', '2', '3', '4']">
+            <last-content></last-content>
         </div>
     </md-content>
 </div>
