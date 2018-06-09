@@ -5,8 +5,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 name: 'home',
                 url: '/home',
                 templateUrl: 'dist/partials/main_container.html',
-                controller: ['$scope', '$rootScope', function ($scope, $rootScope) {
+                controller: ['$scope', '$rootScope', 'LastContent', function ($scope, $rootScope, LastContent) {
                     $rootScope.setContentTitle("Anasayfa");
+                    LastContent.getContent();
                 }]
             },
             children:[]
@@ -16,8 +17,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 name: 'articles',
                 url: '/articles',
                 templateUrl: 'dist/partials/articles.html',
-                controller: ['$scope', '$rootScope', function ($scope, $rootScope) {
+                controller: ['$scope', '$rootScope', 'Article', function ($scope, $rootScope, Article) {
                     $rootScope.setContentTitle("Makaleler");
+                    Article.getArticles();
                 }]
             },
             children:[]
@@ -27,8 +29,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 name: 'documents',
                 url: '/documents',
                 templateUrl: 'dist/partials/documents.html',
-                controller: ['$scope', '$rootScope', function ($scope, $rootScope) {
+                controller: ['$scope', '$rootScope', 'Document', function ($scope, $rootScope, Document) {
                     $rootScope.setContentTitle("Dokümanlar");
+                    Document.getDocuments();
                 }]
             },
             children:[]
