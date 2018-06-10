@@ -11,14 +11,10 @@ p.md-content{
     overflow: hidden;
 }
 
-a.popularClass{
+a{
     text-decoration: none !important;
 }
 
-a.popularClass:link, a.lastContentClass:link, a.popularClass:visited, a.lastContentClass:visited {
-    color: inherit;
-}
-
-a.popularClass:hover, a.lastContentClass:hover {
+a:link,  a:visited, a:hover{
     color: inherit;
 }

@@ -8,7 +8,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 controller: ['$scope', '$rootScope', 'LastContent', function ($scope, $rootScope, LastContent) {
                     $rootScope.setContentTitle("Anasayfa");
                     LastContent.getContent();
-                    $scope.pages = [{type: 'makale', id:'123123'}, {type: 'haber', id:'5432423'}];
+                    $scope.pages = [{type: 'article', id:'123123'}, {type: 'news', id:'5432423'}];
                 }]
             },
             children:[]
