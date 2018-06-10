@@ -6,6 +6,7 @@ app.directive("article", function () {
             page_info: '=param'
         },
         replace: true,
+        transclude: true,
         link: function (scope, element, attribute) {
             element.addClass('articleClass');
         }
