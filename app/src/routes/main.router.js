@@ -28,7 +28,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     name: 'articles.page',
                     url: '/:id',
                     params: {
-                        id: null
+                        id: null,
+                        type: null
                     },
                     views: { // Targets unnamed view of root template (index.html)
                         "@": {
