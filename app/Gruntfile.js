@@ -15,6 +15,14 @@ module.exports = function(grunt) {
             },
             css: {
                 src: 'bower_components/angular-material/angular-material.css', dest: 'dist/assets/css/angular-material.css'
+            },
+            img: {
+                expand: true,
+                cwd: 'src/assets/img/',
+                src: '**',
+                dest: 'dist/assets/img/',
+                flatten: true,
+                filter: 'isFile',
             }
         },
         concat: { //uygulama js dosyalarını birleştir
@@ -113,5 +121,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-http-server');
 
-    grunt.registerTask('default', ["jshint", "copy", "concat", "uglify", "htmlmin", "cssmin", "clean", "http-server", "watch"]);
+    grunt.registerTask('default', ["jshint", "copy", "concat", "uglify", "htmlmin", "cssmin", "clean"]);
 };

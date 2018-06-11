@@ -1,7 +1,7 @@
 app.directive("popularPost", function () {
     return {
         restrict: 'EA',
-        templateUrl: 'dist/partials/directive/popular.directive.html',
+        templateUrl: 'partials/directive/popular.directive.html',
         scope: {
             page_info: '=param'
         },

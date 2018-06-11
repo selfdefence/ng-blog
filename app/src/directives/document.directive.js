@@ -1,7 +1,7 @@
 app.directive("document", function () {
     return {
         restrict: 'EA',
-        templateUrl: 'dist/partials/directive/document.directive.html',
+        templateUrl: 'partials/directive/document.directive.html',
         scope: {
             page_info: '=param'
         },

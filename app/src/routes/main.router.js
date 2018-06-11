@@ -4,7 +4,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             main_route:{
                 name: 'home',
                 url: '/home',
-                templateUrl: 'dist/partials/route/main_container.html',
+                templateUrl: 'partials/route/main_container.html',
                 controller: ['$scope', '$rootScope', 'LastContent', function ($scope, $rootScope, LastContent) {
                     $rootScope.setContentTitle("Anasayfa");
                     LastContent.getContent();
@@ -17,7 +17,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             main_route:{
                 name: 'articles',
                 url: '/articles',
-                templateUrl: 'dist/partials/route/articles.html',
+                templateUrl: 'partials/route/articles.html',
                 controller: ['$scope', '$rootScope', 'Article', function ($scope, $rootScope, Article) {
                     $rootScope.setContentTitle("Makaleler");
                     Article.getArticles();
@@ -34,7 +34,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     },
                     views: { // Targets unnamed view of root template (index.html)
                         "@": {
-                            templateUrl: 'dist/partials/route/page_container.html',
+                            templateUrl: 'partials/route/page_container.html',
                             controller: 'PageController'
                         }
                     }
@@ -45,7 +45,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             main_route:{
                 name: 'documents',
                 url: '/documents',
-                templateUrl: 'dist/partials/route/documents.html',
+                templateUrl: 'partials/route/documents.html',
                 controller: ['$scope', '$rootScope', 'Document', function ($scope, $rootScope, Document) {
                     $rootScope.setContentTitle("Dokümanlar");
                     Document.getDocuments();
@@ -57,7 +57,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
             main_route:{
                 name: 'about',
                 url: '/about',
-                templateUrl: 'dist/partials/route/about.html',
+                templateUrl: 'partials/route/about.html',
                 controller: ['$scope', '$rootScope', function ($scope, $rootScope) {
                     $rootScope.setContentTitle("Hakkımda");
                 }]

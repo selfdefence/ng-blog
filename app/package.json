@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "grunt"
+    "start": "grunt && node index.js"
   },
   "keywords": [],
   "author": "",
@@ -22,6 +22,8 @@
     "grunt-contrib-watch": "^1.1.0"
   },
   "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
     "grunt-http-server": "^2.1.0"
   }
 }

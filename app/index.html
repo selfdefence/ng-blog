@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="dist/assets/css/angular-material.css">
-    <link rel="stylesheet" href="dist/assets/css/app.css">
+    <link rel="stylesheet" href="assets/css/angular-material.css">
+    <link rel="stylesheet" href="assets/css/app.css">
 </head>
 <body ng-app="BlogApp" ng-cloak>
 
@@ -14,14 +14,14 @@
             <div id="area_1_1" flex="25" layout="row">
                 <div id="area_1_1_1" flex="25" hide show-gt-md></div>
                 <div id="area_1_1_2_leftside" flex="75" layout="row" layout-align="center center" hide show-gt-sm class="md-whiteframe-1dp" style="padding: 0 8px 0 8px; background-color: #f1c40f;">
-                    <img src="src/assets/img/security_logo.png" alt="security_alt">
+                    <img src="assets/img/security_logo.png" alt="security_alt">
                 </div>
             </div>
             <div id="area_1_2_banner" flex style="height: 100%; width: 100%; padding: 0 8px 0 8px;">
-                <img flex src="src/assets/img/cyber_banner.png" alt="banner" style="opacity: 0.9" class="md-whiteframe-1dp" layout-fill>
+                <img flex src="assets/img/cyber_banner.png" alt="banner" style="opacity: 0.9" class="md-whiteframe-1dp" layout-fill>
             </div>
             <div id="area_1_3" flex="25" layout="row">
-                <div id="area_1_3_1_followus" flex="75" layout="column" hide show-gt-sm ng-include="'dist/partials/follow_us.html'"></div>
+                <div id="area_1_3_1_followus" flex="75" layout="column" hide show-gt-sm ng-include="'partials/follow_us.html'"></div>
                 <div id="area_1_3_2" flex="25" hide show-gt-md></div>
             </div>
         </div>
@@ -34,21 +34,21 @@
             <div id="area_2" flex="25" layout="row" hide show-gt-sm>
                 <div id="area_2_1" flex="25" hide show-gt-md></div>
                 <div id="area_2_2" flex="100" flex-gt-md="75"  layout="column" style="background: #e7e7e7">
-                    <div id="area_2_2_1" ng-include="'dist/partials/navbar.html'" flex="none" layout="column" hide show-gt-sm style="height: 150px; background: #acacac"></div>
+                    <div id="area_2_2_1" ng-include="'partials/navbar.html'" flex="none" layout="column" hide show-gt-sm style="height: 150px; background: #acacac"></div>
                     <div flex="none" style="height: 10px;"></div>
-                    <div id="area_2_2_2" flex layout="column" ng-include="'dist/partials/popular_post.html'"></div>
+                    <div id="area_2_2_2" flex layout="column" ng-include="'partials/popular_post.html'"></div>
                 </div>
             </div>
 
             <div id="area_4" flex layout="column" style="height:1000px; padding: 0 8px 0 8px">
                 <div id="area_2_2_1_hidden" flex="none" layout="row" show-gt-lg hide-gt-sm  style="height: 50px; background: #666666">
                     <div flex="none" layout="row" layout-align="center center" style="width: 50px">
-                        <img src="src/assets/img/menu_dropdown.png" alt="">
+                        <img src="assets/img/menu_dropdown.png" alt="">
                     </div>
                     <div flex></div>
                 </div>
 
-                <div id="area_4_1" flex="none" layout="row" layout-align="center center" style="height: 100px; background: url(src/assets/img/bg_pattern.png) #8290ff repeat-x; background-blend-mode: multiply">
+                <div id="area_4_1" flex="none" layout="row" layout-align="center center" style="height: 100px; background: url(assets/img/bg_pattern.png) #8290ff repeat-x; background-blend-mode: multiply">
                     <h3>{{title}}</h3>
                 </div>
 
@@ -70,17 +70,17 @@
                 <div id="area_3_1" flex="25" hide show-gt-md></div>
             </div>
         </div>
-        <div id="area_5" flex="grow" layout="column" ng-include="'dist/partials/footer.html'" style="background: #919191"></div>
+        <div id="area_5" flex="grow" layout="column" ng-include="'partials/footer.html'" style="background: #919191"></div>
     </div>
 
-    <script src="dist/assets/js/angular.min.js"></script>
-    <script src="dist/assets/js/angular-aria.min.js"></script>
-    <script src="dist/assets/js/angular-animate.min.js"></script>
-    <script src="dist/assets/js/angular-messages.min.js"></script>
-    <script src="dist/assets/js/angular-material.min.js"></script>
-    <script src="dist/assets/js/angular-ui-router.min.js"></script>
+    <script src="assets/js/angular.min.js"></script>
+    <script src="assets/js/angular-aria.min.js"></script>
+    <script src="assets/js/angular-animate.min.js"></script>
+    <script src="assets/js/angular-messages.min.js"></script>
+    <script src="assets/js/angular-material.min.js"></script>
+    <script src="assets/js/angular-ui-router.min.js"></script>
 
-    <script src="dist/assets/js/app.min.js" charset="utf-8"></script>
+    <script src="assets/js/app.min.js" charset="utf-8"></script>
 
 </body>
 </html>
