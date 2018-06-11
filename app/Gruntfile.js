@@ -2,6 +2,18 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+        copy: {
+            libs:{
+                files: [
+                    {src: ['bower_components/angular/angular.min.js'], dest: 'dist/assets/js/angular.min.js'},
+                    {src: ['bower_components/angular-aria/angular-aria.min.js'], dest: 'dist/assets/js/angular-aria.min.js'},
+                    {src: ['bower_components/angular-animate/angular-animate.min.js'], dest: 'dist/assets/js/angular-animate.min.js'},
+                    {src: ['bower_components/angular-messages/angular-messages.min.js'], dest: 'dist/assets/js/angular-messages.min.js'},
+                    {src: ['bower_components/angular-material/angular-material.min.js'], dest: 'dist/assets/js/angular-material.min.js'},
+                    {src: ['bower_components/angular-ui-router/release/angular-ui-router.min.js'], dest: 'dist/assets/js/angular-ui-router.min.js'}
+                ]
+            }
+        },
         concat: { //uygulama js dosyalarını birleştir
             options: {
                 separator: ';'
@@ -37,7 +49,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                   'dist/<%= pkg.name %>.js': ['<%= concat.dist.dest %>']
+                   'dist/assets/js/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
                 }
             }
         },
@@ -88,6 +100,7 @@ module.exports = function(grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
@@ -97,5 +110,5 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-http-server');
 
-    grunt.registerTask('default', ["jshint", "concat", "uglify", "htmlmin", "cssmin", "clean", "http-server", "watch"]);
+    grunt.registerTask('default', ["jshint", "copy", "concat", "uglify", "htmlmin", "cssmin", "clean", "http-server", "watch"]);
 };
