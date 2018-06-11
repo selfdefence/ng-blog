@@ -21,6 +21,7 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 controller: ['$scope', '$rootScope', 'Article', function ($scope, $rootScope, Article) {
                     $rootScope.setContentTitle("Makaleler");
                     Article.getArticles();
+                    $scope.pages = [{type: 'article', id:'123123'}, {type: 'article', id:'5432423'}];
                 }]
             },
             children: {
