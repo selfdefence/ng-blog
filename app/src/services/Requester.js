@@ -6,7 +6,8 @@ app.service('Requester', ['$http', '$q', function ($http, $q) {
 
         $http(remote_obj)
             .then(function successCallback(response) {
-                console.log(response.status);
+                console.log("response status: " + response.status);
+                console.log("response data: "+ JSON.stringify(response.data).toString());
                 deferred.resolve(response);
             }, function errorCallback(response) {
                 console.log('Error status: ' + response.status);

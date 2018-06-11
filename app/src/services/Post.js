@@ -17,7 +17,7 @@ app.provider('Post', function () {
         var request = this.request;
 
         return {
-            getPosts: function () {
+            getPost: function () {
                 if (request.url === '' || request.method === ''){
                     console.log('Post: invalid request method or url');
                     return null;

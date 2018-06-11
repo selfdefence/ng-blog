@@ -7,8 +7,10 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 templateUrl: 'partials/route/main_container.html',
                 controller: ['$scope', '$rootScope', 'LastContent', function ($scope, $rootScope, LastContent) {
                     $rootScope.setContentTitle("Anasayfa");
-                    LastContent.getContent();
-                    $scope.pages = [{type: 'article', id:'123123'}, {type: 'news', id:'5432423'}];
+                    LastContent.getContent().then(function (response) {
+                        $scope.pages = response.data;
+                    });
+
                 }]
             },
             children:[]
@@ -20,8 +22,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 templateUrl: 'partials/route/articles.html',
                 controller: ['$scope', '$rootScope', 'Article', function ($scope, $rootScope, Article) {
                     $rootScope.setContentTitle("Makaleler");
-                    Article.getArticles();
-                    $scope.pages = [{type: 'article', id:'123123'}, {type: 'article', id:'5432423'}];
+                    Article.getArticles().then(function (response) {
+                        $scope.pages = response.data;
+                    });
                 }]
             },
             children: {
@@ -48,7 +51,9 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 templateUrl: 'partials/route/documents.html',
                 controller: ['$scope', '$rootScope', 'Document', function ($scope, $rootScope, Document) {
                     $rootScope.setContentTitle("Dokümanlar");
-                    Document.getDocuments();
+                    // Document.getDocuments().then(function (response) {
+                    //
+                    // });
                 }]
             },
             children:[]
