@@ -40,12 +40,24 @@
                 </div>
             </div>
 
-            <div id="area_4" flex layout="column" style="height:1000px; padding: 0 8px 0 8px">
-                <div id="area_2_2_1_hidden" flex="none" layout="row" show-gt-lg hide-gt-sm  style="height: 50px; background: #666666">
-                    <div flex="none" layout="row" layout-align="center center" style="width: 50px">
-                        <img src="assets/img/menu_dropdown.png" alt="">
+            <div id="area_4" flex layout="column" style="height:1000px; padding: 0 8px 0 8px" ng-init="open=false">
+
+                <div id="area_2_2_1_hidden" flex="none" layout="column" show-gt-lg hide-gt-sm ng-click="open=!open">
+                    <div flex="none" layout="row" style="background-color: red;">
+                        <div flex="none" layout="row" style="height: 50px;">
+                            <div flex="none" layout="row" layout-align="center center" style="width: 50px">
+                                <img src="assets/img/menu_dropdown.png" alt="">
+                            </div>
+                            <div flex></div>
+                        </div>
                     </div>
-                    <div flex></div>
+                    <div flex="nano" layout="column" ng-if="open" style="height: 150px; background: #666666;">
+                        <a flex ui-sref="home" style="border: 1px solid #323232; text-decoration: none !important; color: #323232; padding-left: 5px;" layout="row" layout-align="none center"><span class="md-body-2">Anasayfa</span></a>
+                        <a flex ui-sref="articles" style="border: 1px solid #323232; text-decoration: none !important; color: #323232; padding-left: 5px;" layout="row" layout-align="none center"><span class="md-body-2">Makaleler</span></a>
+                        <a flex ui-sref="documents" style="border: 1px solid #323232; text-decoration: none !important; color: #323232; padding-left: 5px;" layout="row" layout-align="none center"><span class="md-body-2">Dokümanlar</span></a>
+                        <a flex ui-sref="about" style="border: 1px solid #323232; text-decoration: none !important; color: #323232; padding-left: 5px;" layout="row" layout-align="none center"><span class="md-body-2">Hakkımda</span></a>
+                    </div>
+                    <div flex="none" style="height: 10px;"></div>
                 </div>
 
                 <div id="area_4_1" flex="none" layout="row" layout-align="center center" style="height: 100px; background: url(assets/img/bg_pattern.png) #8290ff repeat-x; background-blend-mode: multiply">
@@ -62,7 +74,7 @@
 
             </div>
 
-            <div id="area_3" flex="25" layout="row" flex="none" hide show-gt-sm>
+            <div id="area_3" flex="25" layout="row" hide show-gt-sm>
                 <div id="area_3_2" flex="100" flex-gt-md="75" style="background: darkkhaki" layout-padding>
                     <div id="area_3_2_1" flex="none" layout="row" layout-align="center center" style="height: 150px; background-color: #9E9E9E">Your Stats</div>
                     <div id="area_3_2_2"></div>
