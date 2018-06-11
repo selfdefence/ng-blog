@@ -12,6 +12,9 @@ module.exports = function(grunt) {
                     {src: ['bower_components/angular-material/angular-material.min.js'], dest: 'dist/assets/js/angular-material.min.js'},
                     {src: ['bower_components/angular-ui-router/release/angular-ui-router.min.js'], dest: 'dist/assets/js/angular-ui-router.min.js'}
                 ]
+            },
+            css: {
+                src: 'bower_components/angular-material/angular-material.css', dest: 'dist/assets/css/angular-material.css'
             }
         },
         concat: { //uygulama js dosyalarını birleştir
