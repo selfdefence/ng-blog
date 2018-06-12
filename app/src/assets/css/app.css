@@ -18,3 +18,7 @@ a{
 a:link,  a:visited, a:hover{
     color: inherit;
 }
+
+.directiveClass{
+    padding: 10px;
+}

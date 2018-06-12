@@ -7,6 +7,7 @@ app.directive("document", function () {
         },
         replace: true,
         link: function (scope, element, attribute) {
+            element.addClass('directiveClass');
             element.addClass('documentClass');
         }
     };

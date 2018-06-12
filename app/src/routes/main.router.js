@@ -10,7 +10,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                     LastContent.getContent().then(function (response) {
                         $scope.pages = response.data;
                     });
-
                 }]
             },
             children:[]
