@@ -1,17 +1,42 @@
 'use strict';
 const express = require('express');
 const bodyParser = require('body-parser');
-var multer  = require('multer');
-var storage = multer.diskStorage({
+const path = require('path');
+const multer  = require('multer');
+
+const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './uploads/')
     },
     filename: function (req, file, cb) {
-        cb(null, file.originalname + '-' + Date.now()+'.txt')
+        cb(null, file.originalname)
     }
 });
 
-var upload = multer({ storage: storage });
+const upload = multer({
+    storage: storage,
+    fileFilter: function (req, file, cb) {
+        const ext = path.extname(file.originalname);
+        //console.log("ext: "+ext);
+
+        if(ext !== '.html'){
+            cb('Only html files are allowed!', false);
+        }else{
+            cb(null, true);
+        }
+    }}).single('file');
+
+const check_upload = function (req, res, next) {
+    upload(req, res, function(err) {
+        if (err) {
+            console.log(err);
+            res.send(err);
+        }else{
+            next();
+        }
+
+    });
+};
 
 const app = express();
 
@@ -26,8 +51,9 @@ app.get('/', function (req, res) {
     res.sendFile(__dirname + "/index.html");
 });
 
-app.post('/admin', upload.single('file'), function(req, res) {
-    res.send('<img src="/uploads/' + req.file.filename + '" />');
+app.post('/admin', check_upload, function (req, res) {
+    console.log("File uploaded successfully");
+    res.send('success');
 });
 
 app.get('/lastcontent', function (req, res) {

@@ -6,12 +6,10 @@ app.service('fileUpload', ['$http', function ($http) {
         $http.post(uploadUrl,fd, {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
-        })
-            .success(function(){
-                console.log("success!!");
-            })
-            .error(function(){
-                console.log("error!!");
-            });
+        }).then(function successCallback(response) {
+            console.log(response);
+        }, function errorCallback(response) {
+            console.log(response);
+        });
     };
 }]);
