@@ -1,0 +1,30 @@
+<md-content layout-gt-sm="row" layout-padding>
+    <div layout="column">
+        <md-input-container style="width: 300px">
+            <label>Title</label>
+            <input ng-model="user.title">
+        </md-input-container>
+
+        <md-input-container style="width: 500px">
+            <label>Summary</label>
+            <textarea ng-model="user.biography" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+        </md-input-container>
+
+        <md-input-container style="width: 500px">
+            <label>İçerik</label>
+            <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
+        </md-input-container>
+
+        <md-input-container>
+            <input  aria-label="file" type="file" file-model="myFile" /><br><br>
+            <button ng-click="uploadFile()">upload me</button>
+        </md-input-container>
+
+
+    </div>
+</md-content>
+<style>
+    md-input-container{
+        margin: 8px 0 8px 0;
+    }
+</style>

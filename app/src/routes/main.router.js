@@ -67,6 +67,40 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 }]
             },
             children:[]
+        },
+        admin:{
+            main_route:{
+                name:'admin',
+                url: '/admin',
+                templateUrl: 'partials/route/admin.html',
+                controller: ['$scope', '$rootScope', 'fileUpload', function ($scope, $rootScope, fileUpload) {
+                    $rootScope.setContentTitle("Admin Panel");
+
+                    $scope.uploadFile = function(){
+                        var file = $scope.myFile;
+                        console.log('file is ' );
+                        console.dir(file);
+                        var uploadUrl = "/admin";
+                        fileUpload.uploadFileToUrl(file, uploadUrl);
+                    };
+                }]
+            },
+            children:{
+                page: {
+                    name: 'admin.article',
+                    url: '/:id',
+                    params: {
+                        id: null,
+                        type: null
+                    },
+                    views: { // Targets unnamed view of root template (index.html)
+                        "@": {
+                            templateUrl: 'partials/route/admin.article.html',
+                            controller: []
+                        }
+                    }
+                }
+            }
         }
     };
 
@@ -79,5 +113,8 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
     $stateProvider.state(routes.articles.children.page);
 
     $stateProvider.state(routes.documents.main_route);
+
     $stateProvider.state(routes.about.main_route);
+
+    $stateProvider.state(routes.admin.main_route);
 }]);

@@ -3,5 +3,4 @@ app.controller('PageController', ['$scope', '$stateParams', 'Post', function ($s
     // Post.getPost().then(function (res) {
     //
     // });
-
 }]);
