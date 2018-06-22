@@ -1,5 +1,19 @@
 <div flex="none" layout="row" layout-align="center center" style="height: 50px; background-color: #f1c40f">
-    <h2 class="md-flex md-title">Başlık</h2>
+    <h2 class="md-flex md-title">{{post.title}}</h2>
+</div>
+<div flex="none" layout="row" layout-align="start none" style="height: 24px;">
+    <div flex="20" layout="row">
+        <div flex="none" layout="row" style="width:24px; padding: 2px;"><img flex="" src="assets/img/profile.png" alt="profile"></div>
+        <div flex layout="row" layout-align="start center" style="padding: 2px; font-size: 11px"><b flex>{{post.writer}}</b></div>
+    </div>
+    <div flex="20" layout="row">
+        <div flex="none" layout="row" style="width:24px; padding: 4px;"><img flex="" src="assets/img/post_date.png" alt="postdate"></div>
+        <div flex layout="row" layout-align="start center" style="margin-left: 3px; font-size: 11px"><b flex>{{post.post_date}}</b></div>
+    </div>
+    <div flex="20" layout="row">
+        <div flex="none" layout="row" style="width:24px; padding: 2px;"><img flex="" src="assets/img/read_number.png" alt="readnumber"></div>
+        <div flex layout="row" layout-align="start center" style="margin-left: 3px; font-size: 11px"><b flex>{{post.read_number}} defa okundu</b></div>
+    </div>
 </div>
 <div flex layout="column">
     <md-content flex style="background: #d3d3d3">
