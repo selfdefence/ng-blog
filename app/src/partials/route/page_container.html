@@ -2,32 +2,21 @@
     <h2 class="md-flex md-title">{{post.title}}</h2>
 </div>
 <div flex="none" layout="row" layout-align="start none" style="height: 24px;">
-    <div flex="20" layout="row">
+    <div flex="30" flex-gt-md="25" layout="row">
         <div flex="none" layout="row" style="width:24px; padding: 2px;"><img flex="" src="assets/img/profile.png" alt="profile"></div>
         <div flex layout="row" layout-align="start center" style="padding: 2px; font-size: 11px"><b flex>{{post.writer}}</b></div>
     </div>
-    <div flex="20" layout="row">
+    <div flex="30" flex-gt-md="20" layout="row">
         <div flex="none" layout="row" style="width:24px; padding: 4px;"><img flex="" src="assets/img/post_date.png" alt="postdate"></div>
         <div flex layout="row" layout-align="start center" style="margin-left: 3px; font-size: 11px"><b flex>{{post.post_date}}</b></div>
     </div>
-    <div flex="20" layout="row">
+    <div flex="30" flex-gt-md="25" layout="row">
         <div flex="none" layout="row" style="width:24px; padding: 2px;"><img flex="" src="assets/img/read_number.png" alt="readnumber"></div>
-        <div flex layout="row" layout-align="start center" style="margin-left: 3px; font-size: 11px"><b flex>{{post.read_number}} defa okundu</b></div>
+        <div flex layout="row" layout-align="start center" style="margin-left: 5px; font-size: 11px"><b flex>{{post.read_number}} defa okundu</b></div>
     </div>
 </div>
 <div flex layout="column">
-    <md-content flex style="background: #d3d3d3">
-        <p>Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.</p>
-        <p>Facete delenit argumentum cum at. Pro rebum nostrum contentiones ad. Mel exerci tritani maiorum at, mea te audire phaedrum, mel et nibh aliquam. Malis causae equidem vel eu. Noster melius vis ea, duis alterum oporteat ea sea. Per cu vide munere fierent.</p>
-        <p>Ad sea dolor accusata consequuntur. Sit facete convenire reprehendunt et. Usu cu nonumy dissentiet, mei choro omnes fuisset ad. Te qui docendi accusam efficiantur, doming noster prodesset eam ei. In vel posse movet, ut convenire referrentur eum, ceteros singulis intellegam eu sit.</p>
-        <p>Sit saepe quaestio reprimique id, duo no congue nominati, cum id nobis facilisi. No est laoreet dissentias, idque consectetuer eam id. Clita possim assueverit cu his, solum virtute recteque et cum. Vel cu luptatum signiferumque, mel eu brute nostro senserit. Blandit euripidis consequat ex mei, atqui torquatos id cum, meliore luptatum ut usu. Cu zril perpetua gubergren pri. Accusamus rationibus instructior ei pro, eu nullam principes qui, reque justo omnes et quo.</p>
-        <p>Sint unum eam id. At sit fastidii theophrastus, mutat senserit repudiare et has. Atqui appareat repudiare ad nam, et ius alii incorrupte. Alii nullam libris his ei, meis aeterno at eum. Ne aeque tincidunt duo. In audire malorum mel, tamquam efficiantur has te.</p>
-        <p>Qui utamur tacimates quaestio ad, quod graece omnium ius ut. Pri ut vero debitis interpretaris, qui cu mentitum adipiscing disputationi. Voluptatum mediocritatem quo ut. Fabulas dolorem ei has, quem molestie persequeris et sit.</p>
-        <p>Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam. Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem aliquam ne.</p>
-        <p>Facete delenit argumentum cum at. Pro rebum nostrum contentiones ad. Mel exerci tritani maiorum at, mea te audire phaedrum, mel et nibh aliquam. Malis causae equidem vel eu. Noster melius vis ea, duis alterum oporteat ea sea. Per cu vide munere fierent.</p>
-        <p>Ad sea dolor accusata consequuntur. Sit facete convenire reprehendunt et. Usu cu nonumy dissentiet, mei choro omnes fuisset ad. Te qui docendi accusam efficiantur, doming noster prodesset eam ei. In vel posse movet, ut convenire referrentur eum, ceteros singulis intellegam eu sit.</p>
-        <p>Sit saepe quaestio reprimique id, duo no congue nominati, cum id nobis facilisi. No est laoreet dissentias, idque consectetuer eam id. Clita possim assueverit cu his, solum virtute recteque et cum. Vel cu luptatum signiferumque, mel eu brute nostro senserit. Blandit euripidis consequat ex mei, atqui torquatos id cum, meliore luptatum ut usu. Cu zril perpetua gubergren pri. Accusamus rationibus instructior ei pro, eu nullam principes qui, reque justo omnes et quo.</p>
-        <p>Sint unum eam id. At sit fastidii theophrastus, mutat senserit repudiare et has. Atqui appareat repudiare ad nam, et ius alii incorrupte. Alii nullam libris his ei, meis aeterno at eum. Ne aeque tincidunt duo. In audire malorum mel, tamquam efficiantur has te.</p>
-        <p>Qui utamur tacimates quaestio ad, quod graece omnium ius ut. Pri ut vero debitis interpretaris, qui cu mentitum adipiscing disputationi. Voluptatum mediocritatem quo ut. Fabulas dolorem ei has, quem molestie persequeris et sit.</p>
+    <md-content flex style="background: #d3d3d3" ng-bind-html="renderHtml(post.content)">
+
     </md-content>
 </div>

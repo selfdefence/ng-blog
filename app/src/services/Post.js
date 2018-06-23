@@ -17,11 +17,14 @@ app.provider('Post', function () {
         var request = this.request;
 
         return {
-            getPost: function () {
+            getPost: function (param) {
                 if (request.url === '' || request.method === ''){
                     console.log('Post: invalid request method or url');
                     return null;
                 }
+
+                if(param !== undefined && param !== null)
+                    request.url += ('/' + param);
 
                 return Requester.request(request);
             }
