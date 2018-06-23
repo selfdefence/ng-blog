@@ -84,22 +84,6 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                         fileUpload.uploadFileToUrl(file, uploadUrl);
                     };
                 }]
-            },
-            children:{
-                page: {
-                    name: 'admin.article',
-                    url: '/:id',
-                    params: {
-                        id: null,
-                        type: null
-                    },
-                    views: { // Targets unnamed view of root template (index.html)
-                        "@": {
-                            templateUrl: 'partials/route/admin.article.html',
-                            controller: []
-                        }
-                    }
-                }
             }
         }
     };

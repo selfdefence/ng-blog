@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const fs = require('fs');
+const async = require('async');
 const multer  = require('multer');
 
 const storage = multer.diskStorage({
@@ -39,6 +40,11 @@ const check_upload = function (req, res, next) {
     });
 };
 
+const save_data = function (req, res, next) {
+    var params = req.params;
+
+};
+
 const app = express();
 
 const PORT = process.env.PORT || 8080;
@@ -48,62 +54,83 @@ app.use("/", express.static(__dirname + '/dist'));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('/', function (req, res) {
-    res.sendFile(__dirname + "/index.html");
-});
+var database;
+var routes;
 
-app.post('/admin', check_upload, function (req, res) {
-    console.log("File uploaded successfully");
-    res.send('success');
-});
+async.series([
+        function (cb) {
+            database = require(__dirname + '/src/database.js');
+            database.setup(cb); //Create models
+        },
+        function (cb) {
 
-app.get('/lastcontent', function (req, res) {
-    const pages = [
-        {type: 'article', id:'123123', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'},
-        {type: 'news', id:'5432423', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'},
-        {type: 'document', id:'5432423', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'}
-    ];
+            app.get('/', function (req, res) {
+                res.sendFile(__dirname + "/index.html");
+            });
 
-    res.json(pages);
-});
+            app.post('/admin', check_upload, function (req, res) {
+                console.log("File uploaded successfully");
+                res.send('success');
+            });
 
-app.get('/popularpost', function (req, res) {
-    const pages = [
-        {id:'1', type: 'article'},
-        {id:'2', type: 'article'},
-        {id:'3', type: 'article'}
-    ];
+            app.get('/lastcontent', function (req, res) {
+                const pages = [
+                    {type: 'article', id:'123123', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'},
+                    {type: 'news', id:'5432423', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'},
+                    {type: 'document', id:'5432423', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'}
+                ];
 
-    res.json(pages);
-});
+                res.json(pages);
+            });
 
-app.get('/article', function (req, res) {
-    const pages = [
-        {type: 'article', id:'123123', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'},
-        {type: 'article', id:'5432423', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'}
-    ];
+            app.get('/popularpost', function (req, res) {
+                const pages = [
+                    {id:'1', type: 'article'},
+                    {id:'2', type: 'article'},
+                    {id:'3', type: 'article'}
+                ];
 
-    res.json(pages);
-});
+                res.json(pages);
+            });
 
-app.get('/post/:id', function (req, res) {
-    console.log(req.params.id);
+            app.get('/article', function (req, res) {
+                const pages = [
+                    {type: 'article', id:'123123', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'},
+                    {type: 'article', id:'5432423', title: 'Başlık Başlık Başlık Başlık', summary: 'İçerik İçerik İçerik İçerik'}
+                ];
 
-    //**//
-    const filePath = __dirname + '/uploads/page.html';
+                res.json(pages);
+            });
 
-    fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
-        if (!err) {
-            console.log('received data: ' + data);
-            res.writeHead(200, {'Content-Type': 'text/html'});
-            res.write(data);
-            res.end();
-        } else {
-            console.log(err);
-            res.send('<b>Error!<b>')
+            app.get('/post/:id', function (req, res) {
+                console.log(req.params.id);
+
+                //**//
+                const filePath = __dirname + '/uploads/page.html';
+
+                fs.readFile(filePath, {encoding: 'utf-8'}, function(err,data){
+                    if (!err) {
+                        console.log('received data: ' + data);
+                        res.writeHead(200, {'Content-Type': 'text/html'});
+                        res.write(data);
+                        res.end();
+                    } else {
+                        console.log(err);
+                        res.send('<b>Error!<b>')
+                    }
+                });
+            });
+
+            cb(null);
+        }],
+    function (err, result) {
+        if(err){
+            throw (err);
+        }else{
+            console.log("index is run");
         }
     });
-});
+
 
 app.listen(PORT, function() {
     console.log('Node app is running on port', PORT);
