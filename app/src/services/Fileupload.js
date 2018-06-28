@@ -1,15 +1,14 @@
-app.service('fileUpload', ['$http', function ($http) {
-    this.uploadFileToUrl = function(file, uploadUrl){
+app.service('fileUpload', ['$http', '$q', function ($http, $q) {
+    this.uploadFileToUrl = function(file, uploadUrl, input){
+
         var fd = new FormData();
         fd.append('file', file);
 
-        $http.post(uploadUrl,fd, {
+        fd.append('input', JSON.stringify(input));
+
+        return $http.post(uploadUrl,fd, {
             transformRequest: angular.identity,
             headers: {'Content-Type': undefined}
-        }).then(function successCallback(response) {
-            console.log(response);
-        }, function errorCallback(response) {
-            console.log(response);
         });
     };
 }]);

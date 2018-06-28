@@ -1,30 +1,47 @@
 <md-content layout-gt-sm="row" layout-padding>
-    <div layout="column">
-        <md-input-container style="width: 300px">
-            <label>Title</label>
-            <input ng-model="user.title">
-        </md-input-container>
+    <div flex layout="column">
+        <div flex="none" ng-hide="disable_upload">
+            <md-input-container style="width: 300px">
+                <label>Title</label>
+                <input ng-model="input.model.title">
+            </md-input-container>
 
-        <md-input-container style="width: 500px">
-            <label>Summary</label>
-            <textarea ng-model="user.biography" md-maxlength="150" rows="3" md-select-on-focus></textarea>
-        </md-input-container>
+            <md-input-container style="width: 500px">
+                <label>Summary</label>
+                <textarea ng-model="input.summary" md-maxlength="150" rows="3" md-select-on-focus></textarea>
+            </md-input-container>
 
-        <md-input-container style="width: 500px">
-            <label>İçerik</label>
-            <textarea ng-model="user.biography" md-maxlength="150" rows="5" md-select-on-focus></textarea>
-        </md-input-container>
+            <div flex="none" layout="row" layout-align="start center" style="height: 50px;">
+                <div flex="none">
+                    <span>Doküman tipi:</span>
+                </div>
+                <div flex style="margin-left: 5px;">
+                    <select ng-model="input.selected" name="page_type" id="pagetype">
+                        <option ng-repeat="x in types">{{x}}</option>
+                    </select>
+                </div>
+            </div>
 
-        <md-input-container>
-            <input  aria-label="file" type="file" file-model="myFile" /><br><br>
-            <button ng-click="uploadFile()">upload me</button>
-        </md-input-container>
-
-
+            <div flex="auto" layout="row">
+                <div flex="none" layout="row" layout-align="start center">
+                    <span>Dokümanı Yükle:</span>
+                </div>
+                <div flex="none" layout="row" layout-align="start center" style="margin-left: 5px;">
+                    <input  aria-label="file" type="file" file-model="myFile" /><br><br>
+                </div>
+                <div flex layout="row" layout-align="start center">
+                    <button ng-click="uploadFile()">Yükle</button>
+                </div>
+            </div>
+        </div>
+        <div flex="none" layout="row" layout-align="center center" style="height: 50px; background-color: #d3d3d3; margin-top: 10px;">
+            <span>{{status}}</span>
+        </div>
     </div>
 </md-content>
 <style>
     md-input-container{
         margin: 8px 0 8px 0;
+        width: 100%;
     }
 </style>

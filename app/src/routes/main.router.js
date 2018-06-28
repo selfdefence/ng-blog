@@ -75,13 +75,37 @@ app.config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $u
                 templateUrl: 'partials/route/admin.html',
                 controller: ['$scope', '$rootScope', 'fileUpload', function ($scope, $rootScope, fileUpload) {
                     $rootScope.setContentTitle("Admin Panel");
+                    $scope.input = {
+                        model: {title: 'no title'},
+                        selected: 'article'
+                    };
+
+                    $scope.myFile = '';
+
+                    $scope.status = '';
+                    $scope.disable_upload = false;
+                    $scope.types = ["article", "news", "document"];
 
                     $scope.uploadFile = function(){
                         var file = $scope.myFile;
                         console.log('file is ' );
                         console.dir(file);
                         var uploadUrl = "/admin";
-                        fileUpload.uploadFileToUrl(file, uploadUrl);
+
+                        if ($scope.myFile === '') {
+                            $scope.status = 'Dosya seçilmedi';
+                            return;
+                        }
+
+                        fileUpload.uploadFileToUrl(file, uploadUrl, $scope.input)
+                            .then(function successCallback(response) {
+                                console.log(response);
+                                $scope.status = 'Dosya yüklendi';
+                                $scope.disable_upload = true;
+                            }, function errorCallback(response) {
+                                console.log(response);
+                                $scope.status = response;
+                            });
                     };
                 }]
             }

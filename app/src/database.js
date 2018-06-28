@@ -28,6 +28,9 @@ function Database() {
                     //cb(null);
                     that.saveModels(cb);
                     //cb(null);
+                },
+                function (cb) {
+                    that.insertInitials(cb);
                 }
             ],
             function (err, result) {
@@ -198,6 +201,31 @@ function Database() {
                 }
             });
     };
+
+    this.insertInitials = function (parent_callback) {
+        var pagetype = this.models.PageType;
+
+        this.models.PageType.count()
+            .then(function (count) {
+                if (count === 0) {
+                    var models = [{name: 'article'}, {name: 'news'}, {name: 'document'}];
+
+                    pagetype.bulkCreate(models, { raw: true })
+                        .then(function (instance) {
+                            console.log(instance.get());
+                            parent_callback(null);
+                        }).catch(function (err) {
+                            console.log(err);
+                            parent_callback(null);
+                        })
+                }else{
+                    console.log("Page types are already inserted");
+                    parent_callback(null);
+                }
+            }).catch(function (err) {
+                parent_callback(null);
+            });
+    }
 }
 
 module.exports = new Database();
